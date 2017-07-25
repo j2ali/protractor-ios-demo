@@ -4,14 +4,18 @@
 const { SpecReporter } = require('jasmine-spec-reporter');
 
 exports.config = {
+  seleniumAddress: 'http://localhost:4723/wd/hub',
   allScriptsTimeout: 11000,
   specs: [
     './e2e/**/*.e2e-spec.ts'
   ],
   capabilities: {
-    'browserName': 'chrome'
+    'browserName': 'safari',
+    'automationName': 'XCUITest',
+    'platformName' : 'iOS',
+    'platformVersion': '10.3',
+    'deviceName': 'iPhone Simulator',
   },
-  directConnect: true,
   baseUrl: 'http://localhost:4200/',
   framework: 'jasmine',
   jasmineNodeOpts: {

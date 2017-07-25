@@ -9,6 +9,8 @@ describe('protractor-demo-ios App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
+    page.text_box().sendKeys('This is a test');
+    page.text_box().sendKeys('Test 3');
     expect(page.getParagraphText()).toEqual('Welcome to app!');
   });
 });
